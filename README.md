@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/skaterdav85/ember-cli-gatekeeper.svg?branch=master)](https://travis-ci.org/skaterdav85/ember-cli-gatekeeper)
+
 # ember-cli-gatekeeper
 
 This Ember CLI addon will fail your build if code coverage drops by a specified threshold. For now, this is meant to be used with `ember-cli-code-coverage`.
