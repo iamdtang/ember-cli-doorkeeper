@@ -1,17 +1,17 @@
 {
   "name": "ember-cli-gatekeeper",
   "version": "0.0.0",
-  "description": "Fail the CI build if code coverage drops.",
+  "description": "Fail the CI build if code coverage drops",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "David Tang",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/skaterdav85/ember-cli-gatekeeper",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
