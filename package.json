@@ -1,5 +1,5 @@
 {
-  "name": "ember-cli-doorman",
+  "name": "ember-cli-doorkeeper",
   "version": "0.0.0",
   "description": "Fail the CI build if code coverage drops",
   "keywords": [
@@ -11,7 +11,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/skaterdav85/ember-cli-doorman",
+  "repository": "https://github.com/skaterdav85/ember-cli-doorkeeper",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
