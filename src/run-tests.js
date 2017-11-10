@@ -1,7 +1,7 @@
 'use strict';
 
 const shell = require('shelljs');
-const config = require('./../.gatekeeperrc');
+const config = require('./../.doormanrc');
 
 module.exports = function runTests() {
   console.log('Running tests ...');
