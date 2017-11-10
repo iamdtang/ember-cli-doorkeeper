@@ -16,13 +16,14 @@ module.exports = {
         description: 'Run tests and fail if coverage drops',
         run() {
           let oldCoverage = getCoverage();
+          this.ui.writeLine('Running tests ...');
           runTests();
           let newCoverage = getCoverage();
-          displayCoverage(oldCoverage, 'Old Coverage');
-          displayCoverage(newCoverage, 'New Coverage');
+          displayCoverage.call(this, oldCoverage, 'Old Coverage');
+          displayCoverage.call(this, newCoverage, 'New Coverage');
           try {
             checkCoverageChange(oldCoverage, newCoverage, config.threshold);
-            console.log('Awesome! Keep up the testing.');
+            this.ui.writeLine('Awesome! Keep up the testing.');
           } catch(error) {
             console.error(error.message);
             process.exit(1);
