@@ -1,6 +1,6 @@
-module.exports = function displayCoverage(coverage) {
+module.exports = function displayCoverage(coverage, title) {
   console.log('');
-  console.log('Current Coverage');
+  console.log(title);
   console.log('================');
   console.log(`Lines: ${coverage.lines}`);
   console.log(`Statements: ${coverage.statements}`);
