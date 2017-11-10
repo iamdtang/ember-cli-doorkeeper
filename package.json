@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-gatekeeper",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Fail the CI build if code coverage drops.",
   "keywords": [
     "ember-addon"
   ],
@@ -15,13 +15,15 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "./node_modules/.bin/mocha src/*-test.js"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.6.0"
+    "ember-cli-babel": "^6.6.0",
+    "shelljs": "^0.7.8"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "chai": "^4.1.2",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.16.2",
     "ember-cli-dependency-checker": "^2.0.0",
@@ -38,7 +40,8 @@
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.16.0",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "mocha": "^4.0.1"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
