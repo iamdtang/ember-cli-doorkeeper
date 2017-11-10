@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function checkCoverageChange(oldCoverage, newCoverage, threshold) {
   let lineCoverageDiff = oldCoverage.lines - newCoverage.lines;
   let statementCoverageDiff = oldCoverage.statements - newCoverage.statements;

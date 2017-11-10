@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function displayCoverage(coverage, title) {
   console.log('');
   console.log(title);

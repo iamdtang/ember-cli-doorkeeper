@@ -1,3 +1,5 @@
+'use strict';
+
 const shell = require('shelljs');
 const config = require('./../.gatekeeperrc');
 
