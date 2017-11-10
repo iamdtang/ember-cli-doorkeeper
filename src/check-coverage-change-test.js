@@ -1,3 +1,5 @@
+'use strict';
+
 const checkCoverageChange = require('./check-coverage-change');
 const { expect } = require('chai');
 

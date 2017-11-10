@@ -16,10 +16,10 @@ module.exports = {
         description: 'Run tests and fail if coverage drops',
         run() {
           let oldCoverage = getCoverage();
-          displayCoverage(oldCoverage);
           runTests();
           let newCoverage = getCoverage();
-          displayCoverage(newCoverage);
+          displayCoverage(oldCoverage, 'Old Coverage');
+          displayCoverage(newCoverage, 'New Coverage');
           try {
             checkCoverageChange(oldCoverage, newCoverage, config.threshold);
             console.log('Awesome! Keep up the testing.');

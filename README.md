@@ -2,12 +2,20 @@
 
 # ember-cli-gatekeeper
 
-This Ember CLI addon will fail your build if code coverage drops by a specified threshold. For now, this is meant to be used with `ember-cli-code-coverage`.
+This Ember CLI addon will fail a test suite if code coverage drops by a specified threshold. For now, this is meant to be used with `ember-cli-code-coverage`.
 
-This README outlines the details of collaborating on this Ember addon.
-
-## Installation
+## Installation and Configuration
 
 ```
 ember install ember-cli-gatekeeper
+```
+
+Update your `npm test` command in `package.json` to `ember gatekeeper`.
+
+Add your test command to `testCommand` to `.gatekeeperrc.js` in the root of your project.
+
+Lastly, add the following line to `.gitignore`:
+
+```
+!/coverage/coverage-summary.json
 ```
