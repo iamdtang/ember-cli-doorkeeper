@@ -5,20 +5,27 @@ module.exports = function checkCoverageChange(oldCoverage, newCoverage, threshol
   let statementCoverageDiff = oldCoverage.statements - newCoverage.statements;
   let functionCoverageDiff = oldCoverage.functions - newCoverage.functions;
   let branchCoverageDiff = oldCoverage.branches - newCoverage.branches;
+  let results = [];
 
   if (lineCoverageDiff > threshold) {
-    throw new Error(`Line coverage dropped by ${lineCoverageDiff}%`);
+    results.push(`Line coverage dropped by ${lineCoverageDiff}%`);
   }
 
   if (statementCoverageDiff > threshold) {
-    throw new Error(`Statement coverage dropped by ${statementCoverageDiff}%`);
+    results.push(`Statement coverage dropped by ${statementCoverageDiff}%`);
   }
 
   if (functionCoverageDiff > threshold) {
-    throw new Error(`Function coverage dropped by ${functionCoverageDiff}%`);
+    results.push(`Function coverage dropped by ${functionCoverageDiff}%`);
   }
 
   if (branchCoverageDiff > threshold) {
-    throw new Error(`Branch coverage dropped by ${branchCoverageDiff}%`);
+    results.push(`Branch coverage dropped by ${branchCoverageDiff}%`);
   }
+
+  if (results.length === 0) {
+    return true;
+  }
+
+  throw results;
 }

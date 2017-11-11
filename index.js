@@ -25,8 +25,10 @@ module.exports = {
           try {
             checkCoverageChange(oldCoverage, newCoverage, config.threshold);
             this.ui.writeLine('Awesome! Keep up the testing.');
-          } catch(error) {
-            console.error(error.message);
+          } catch(errors) {
+            errors.forEach((error) => {
+              this.ui.writeLine(error);
+            });
             process.exit(1);
           }
         }
