@@ -12,7 +12,7 @@ ember install ember-cli-doorkeeper
 
 Update your `npm test` command in `package.json` to `ember doorkeeper`.
 
-Add your test command to `testCommand` to `.doorkeeperrc.js` in the root of your project.
+Add your test command to `testCommand` in `.doorkeeperrc.js`, which was created in the root of your project during installation.
 
 Lastly, add the following line to `.gitignore`:
 
