@@ -3,9 +3,8 @@
 
 const getCoverage = require('./src/get-coverage');
 const displayCoverage = require('./src/display-coverage');
-const runTests = require('./src/run-tests');
+const runTestCommand = require('./src/run-test-command');
 const checkCoverageChange = require('./src/check-coverage-change');
-const config = require('./.doorkeeperrc');
 
 module.exports = {
   name: 'ember-cli-doorkeeper',
@@ -15,9 +14,11 @@ module.exports = {
         name: 'doorkeeper',
         description: 'Run tests and fail if coverage drops',
         run() {
+          let config = require(`${this.project.root}/.doorkeeperrc`);
           let oldCoverage = getCoverage();
           this.ui.writeLine('Running tests ...');
-          runTests();
+          this.ui.writeLine(config.testCommand);
+          runTestCommand(config.testCommand);
           let newCoverage = getCoverage();
           displayCoverage.call(this, oldCoverage, 'Old Coverage');
           displayCoverage.call(this, newCoverage, 'New Coverage');
