@@ -2,6 +2,8 @@
 
 # ember-cli-doorkeeper (WIP)
 
+__This addon is still a WIP__. See below for what is left.
+
 This Ember CLI addon will fail a test suite if code coverage drops by a specified threshold. For now, this is meant to be used with `ember-cli-code-coverage`.
 
 ## Installation and Configuration
