@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/skaterdav85/ember-cli-doorkeeper.svg?branch=master)](https://travis-ci.org/skaterdav85/ember-cli-doorkeeper)
 
-# ember-cli-doorkeeper
+# ember-cli-doorkeeper (WIP)
 
 This Ember CLI addon will fail a test suite if code coverage drops by a specified threshold. For now, this is meant to be used with `ember-cli-code-coverage`.
 
@@ -19,3 +19,7 @@ Lastly, add the following line to `.gitignore`:
 ```
 !/coverage/coverage-summary.json
 ```
+
+## What is WIP?
+
+Setting up a script for CI to commit the new `coverage/coverage-summary.json` back into the repo
