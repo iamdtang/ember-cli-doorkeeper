@@ -5,6 +5,7 @@ const getCoverage = require('./src/get-coverage');
 const displayCoverage = require('./src/display-coverage');
 const runTestCommand = require('./src/run-test-command');
 const checkCoverageChange = require('./src/check-coverage-change');
+const commitCoverageResults = require('./src/commit-coverage-results');
 
 module.exports = {
   name: 'ember-cli-doorkeeper',
@@ -24,6 +25,7 @@ module.exports = {
           displayCoverage(this.ui, newCoverage, 'New Coverage');
           try {
             checkCoverageChange(oldCoverage, newCoverage, config.threshold);
+            commitCoverageResults();
             this.ui.writeLine('Awesome! Keep up the testing.');
           } catch(errors) {
             errors.forEach((error) => {
