@@ -15,7 +15,7 @@ module.exports = {
         description: 'Run tests and fail if coverage drops',
         run() {
           let config = require(`${this.project.root}/.doorkeeperrc`);
-          let oldCoverage = getCoverage('master');
+          let oldCoverage = getCoverage(config.mainBranch);
           this.ui.writeLine('Running tests ...');
           this.ui.writeLine(config.testCommand);
           runTestCommand(config.testCommand);

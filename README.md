@@ -6,6 +6,8 @@ __This addon is still a WIP__. See below for what is left.
 
 This Ember CLI addon will fail a test suite if code coverage drops by a specified threshold. For now, this is meant to be used with `ember-cli-code-coverage`.
 
+The `ember-cli-code-coverage` addon generates code coverage results in `coverage/coverage-summary.json`. This addon works by generating code coverage for a PR and comparing the results against the code coverage results on the `master` branch (you can configure which branch to compare against in `.doorkeeperrc.js` via the `mainBranch` option).
+
 ## Installation and Configuration
 
 ```
