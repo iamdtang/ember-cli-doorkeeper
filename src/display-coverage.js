@@ -1,12 +1,12 @@
 'use strict';
 
-module.exports = function displayCoverage(coverage, title) {
-  this.ui.writeLine('');
-  this.ui.writeLine(title);
-  this.ui.writeLine('================');
-  this.ui.writeLine(`Lines: ${coverage.lines}%`);
-  this.ui.writeLine(`Statements: ${coverage.statements}%`);
-  this.ui.writeLine(`Functions: ${coverage.functions}%`);
-  this.ui.writeLine(`Branches: ${coverage.branches}%`);
-  this.ui.writeLine('');
+module.exports = function displayCoverage(ui, coverage, title) {
+  ui.writeLine('');
+  ui.writeLine(title);
+  ui.writeLine('================');
+  ui.writeLine(`Lines: ${coverage.lines}%`);
+  ui.writeLine(`Statements: ${coverage.statements}%`);
+  ui.writeLine(`Functions: ${coverage.functions}%`);
+  ui.writeLine(`Branches: ${coverage.branches}%`);
+  ui.writeLine('');
 }

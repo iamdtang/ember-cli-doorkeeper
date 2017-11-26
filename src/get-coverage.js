@@ -1,11 +1,20 @@
 'use strict';
 
 const fs = require('fs');
+const shell = require('shelljs');
 
-module.exports = function getCoverage() {
-  let contents = fs.readFileSync('./coverage/coverage-summary.json', {
-    encoding: 'utf8'
-  });
+module.exports = function getCoverage(branch) {
+  let pathToCoverageSummary = './coverage/coverage-summary.json';
+  let contents;
+
+  if (branch) {
+    contents = shell.exec(`git show ${branch}:${pathToCoverageSummary} | cat`);
+  } else {
+    contents = fs.readFileSync(pathToCoverageSummary, {
+      encoding: 'utf8'
+    });
+  }
+
   let json = JSON.parse(contents);
   return {
     lines: json.total.lines.pct,

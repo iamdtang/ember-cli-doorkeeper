@@ -15,13 +15,13 @@ module.exports = {
         description: 'Run tests and fail if coverage drops',
         run() {
           let config = require(`${this.project.root}/.doorkeeperrc`);
-          let oldCoverage = getCoverage();
+          let oldCoverage = getCoverage('master');
           this.ui.writeLine('Running tests ...');
           this.ui.writeLine(config.testCommand);
           runTestCommand(config.testCommand);
           let newCoverage = getCoverage();
-          displayCoverage.call(this, oldCoverage, 'Old Coverage');
-          displayCoverage.call(this, newCoverage, 'New Coverage');
+          displayCoverage(this.ui, oldCoverage, 'Old Coverage');
+          displayCoverage(this.ui, newCoverage, 'New Coverage');
           try {
             checkCoverageChange(oldCoverage, newCoverage, config.threshold);
             this.ui.writeLine('Awesome! Keep up the testing.');
