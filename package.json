@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-doorkeeper",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Fail the CI build if code coverage drops",
   "keywords": [
     "ember-addon"
