@@ -8,7 +8,11 @@ module.exports = function getCoverage(branch) {
   let contents;
 
   if (branch) {
-    contents = shell.exec(`git show ${branch}:${pathToCoverageSummary}`);
+    contents = shell.exec(`git show ${branch}:${pathToCoverageSummary}`).stdout;
+
+    if (!contents) {
+      return false;
+    }
   } else {
     contents = fs.readFileSync(pathToCoverageSummary, {
       encoding: 'utf8'
