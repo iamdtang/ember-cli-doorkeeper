@@ -23,7 +23,3 @@ Lastly, add the following line to `.gitignore`:
 ```
 !/coverage/coverage-summary.json
 ```
-
-## What is WIP?
-
-Setting up a script for CI to commit the new `coverage/coverage-summary.json` back into the repo
