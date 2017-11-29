@@ -36,7 +36,7 @@ module.exports = {
             errors.forEach((error) => {
               this.ui.writeLine(error);
             });
-            this.ui.writeLine('Write more tests please :)');
+            this.ui.writeLine('Write more tests please. 🙏🏻');
             process.exit(1);
           }
         }
