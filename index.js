@@ -31,12 +31,12 @@ module.exports = {
           displayCoverage(this.ui, newCoverage, 'New Coverage');
           try {
             checkCoverageChange(oldCoverage, newCoverage, config.threshold);
-            this.ui.writeLine('Awesome! Keep up the testing! 👍');
+            this.ui.writeLine(config.passMessage);
           } catch(errors) {
             errors.forEach((error) => {
               this.ui.writeLine(error);
             });
-            this.ui.writeLine('Write more tests please. 🙏🏻');
+            this.ui.writeLine(config.failMessage);
             process.exit(1);
           }
         }
