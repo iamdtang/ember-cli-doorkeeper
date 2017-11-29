@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-doorkeeper",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Fail CI on pull requests in Ember apps and addons if code coverage drops by a specified threshold",
   "keywords": [
     "ember-addon",
