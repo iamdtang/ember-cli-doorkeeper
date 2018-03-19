@@ -17,7 +17,12 @@ module.exports = {
           let config = require(`${this.project.root}/.doorkeeperrc`);
           this.ui.writeLine('Running tests ...');
           this.ui.writeLine(config.testCommand);
-          runTestCommand(config.testCommand);
+          let resp = runTestCommand(config.testCommand);
+          if (resp.code !== 0) {
+            this.ui.writeLine("We'll run code coverage when your tests pass.");
+            process.exit(1);
+            return;
+          }
 
           let oldCoverage = getCoverage(config.mainBranch);
 
