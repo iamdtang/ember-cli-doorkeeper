@@ -3,5 +3,5 @@
 const shell = require('shelljs');
 
 module.exports = function runTestCommand(testCommand) {
-  shell.exec(testCommand);
+  return shell.exec(testCommand);
 }
